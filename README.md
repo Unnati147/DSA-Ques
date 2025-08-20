@@ -9,5 +9,5 @@ This repository is organized by **topics & difficulty**, with clean, well-docume
 - ✅ Well-structured code by **topic & difficulty**  
 - ✅ Explanations & comments for better understanding  
 - ✅ Covers popular **interview problems**  
-- ✅ Open-source learning resource for anyone preparing DSA 
+- ✅ Open-source learning resource for anyone preparing DSA.
 
