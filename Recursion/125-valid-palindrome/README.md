@@ -1,37 +1,40 @@
-<h2><a href="https://leetcode.com/problems/valid-palindrome">Valid Palindrome</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' /><hr><p>A phrase is a <strong>palindrome</strong> if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.</p>
+<h2><a href="https://leetcode.com/problems/valid-palindrome">Valid Palindrome</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' />
 
 <p>Given a string <code>s</code>, return <code>true</code><em> if it is a <strong>palindrome</strong>, or </em><code>false</code><em> otherwise</em>.</p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
-<pre>
-<strong>Input:</strong> s = &quot;A man, a plan, a canal: Panama&quot;
-<strong>Output:</strong> true
-<strong>Explanation:</strong> &quot;amanaplanacanalpanama&quot; is a palindrome.
-</pre>
+## Problem Description
+Given a string `s`, determine whether it is a palindrome or not.  
+A palindrome is a string that reads the same forward and backward.  
+- Ignore letter casing (treat uppercase and lowercase as the same).  
+- Remove all characters that are not letters or digits before checking.  
 
-<p><strong class="example">Example 2:</strong></p>
+### Examples
+- Input: `"A man, a plan, a canal: Panama"`  
+  Output: `true`  
+  Explanation: After removing non-alphanumeric characters → `"amanaplanacanalpanama"`, which is a palindrome.  
 
-<pre>
-<strong>Input:</strong> s = &quot;race a car&quot;
-<strong>Output:</strong> false
-<strong>Explanation:</strong> &quot;raceacar&quot; is not a palindrome.
-</pre>
+- Input: `"race a car"`  
+  Output: `false`  
 
-<p><strong class="example">Example 3:</strong></p>
+- Input: `" "`  
+  Output: `true` (empty string is considered a palindrome).  
 
-<pre>
-<strong>Input:</strong> s = &quot; &quot;
-<strong>Output:</strong> true
-<strong>Explanation:</strong> s is an empty string &quot;&quot; after removing non-alphanumeric characters.
-Since an empty string reads the same forward and backward, it is a palindrome.
-</pre>
+---
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+## Approach
+Har call me start aur end pointer ko compare karta hai.
 
-<ul>
-	<li><code>1 &lt;= s.length &lt;= 2 * 10<sup>5</sup></code></li>
-	<li><code>s</code> consists only of printable ASCII characters.</li>
-</ul>
+Agar non-alphanumeric mile to skip karke agli call me bhejta hai.
+
+Agar mismatch ho jaye to false return ho jata hai.
+
+Agar sab match ho gaye to base case start >= end aayega aur true return karega.  
+
+---
+
+## Complexity
+- **Time Complexity:** `O(n)` where `n` is the length of the string.  
+- **Space Complexity:** `O(n)` for the cleaned string.  
