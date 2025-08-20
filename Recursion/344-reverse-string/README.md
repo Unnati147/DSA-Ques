@@ -2,18 +2,24 @@
 
 <p>You must do this by modifying the input array <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank">in-place</a> with <code>O(1)</code> extra memory.</p>
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
-<pre><strong>Input:</strong> s = ["h","e","l","l","o"]
-<strong>Output:</strong> ["o","l","l","e","h"]
-</pre><p><strong class="example">Example 2:</strong></p>
-<pre><strong>Input:</strong> s = ["H","a","n","n","a","h"]
-<strong>Output:</strong> ["h","a","n","n","a","H"]
-</pre>
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+Problem
 
-<ul>
-	<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>
-	<li><code>s[i]</code> is a <a href="https://en.wikipedia.org/wiki/ASCII#Printable_characters" target="_blank">printable ascii character</a>.</li>
-</ul>
+Given an array of characters, reverse it in-place.
+Instead of the usual two-pointer method, this solution uses recursion.
+
+Example
+
+Input: ["h","e","l","l","o"]
+Output: ["o","l","l","e","h"]
+
+Approach
+
+Base case: if left index ≥ right index → stop recursion.
+
+Recursive step: swap the characters at left and right, then call the function again for left+1 and right-1.
+
+Complexity
+
+Time Complexity: O(n)
+
+Space Complexity: O(n) (due to recursion stack)
