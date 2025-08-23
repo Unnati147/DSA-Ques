@@ -1,31 +1,75 @@
-<h2><a href="https://leetcode.com/problems/find-missing-and-repeated-values">Find Missing and Repeated Values</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' /><hr><p>You are given a <strong>0-indexed</strong> 2D integer matrix <code><font face="monospace">grid</font></code> of size <code>n * n</code> with values in the range <code>[1, n<sup>2</sup>]</code>. Each integer appears <strong>exactly once</strong> except <code>a</code> which appears <strong>twice</strong> and <code>b</code> which is <strong>missing</strong>. The task is to find the repeating and missing numbers <code>a</code> and <code>b</code>.</p>
+<h2><a href="https://leetcode.com/problems/find-missing-and-repeated-values">Find Missing and Repeated Values</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' />
+You are given an n x n grid containing integers from 1 to n^2.
 
-<p>Return <em>a <strong>0-indexed </strong>integer array </em><code>ans</code><em> of size </em><code>2</code><em> where </em><code>ans[0]</code><em> equals to </em><code>a</code><em> and </em><code>ans[1]</code><em> equals to </em><code>b</code><em>.</em></p>
+Each number should appear exactly once.
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+However, one number a appears twice (repeated).
 
-<pre>
-<strong>Input:</strong> grid = [[1,3],[2,2]]
-<strong>Output:</strong> [2,4]
-<strong>Explanation:</strong> Number 2 is repeated and number 4 is missing so the answer is [2,4].
-</pre>
+Another number b is missing from the grid.
 
-<p><strong class="example">Example 2:</strong></p>
+Return an array [a, b] where:
 
-<pre>
-<strong>Input:</strong> grid = [[9,1,7],[8,9,2],[3,4,6]]
-<strong>Output:</strong> [9,5]
-<strong>Explanation:</strong> Number 9 is repeated and number 5 is missing so the answer is [9,5].
-</pre>
+a = the repeated number
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+b = the missing number
 
-<ul>
-	<li><code>2 &lt;= n == grid.length == grid[i].length &lt;= 50</code></li>
-	<li><code>1 &lt;= grid[i][j] &lt;= n * n</code></li>
-	<li>For all <code>x</code> that <code>1 &lt;= x &lt;= n * n</code> there is exactly one <code>x</code> that is not equal to any of the grid members.</li>
-	<li>For all <code>x</code> that <code>1 &lt;= x &lt;= n * n</code> there is exactly one <code>x</code> that is equal to exactly two of the grid members.</li>
-	<li>For all <code>x</code> that <code>1 &lt;= x &lt;= n * n</code> except two of them there is exactly one pair of <code>i, j</code> that <code>0 &lt;= i, j &lt;= n - 1</code> and <code>grid[i][j] == x</code>.</li>
-</ul>
+Example
+
+Input:
+
+grid = [[1,3],
+        [2,2]]
+
+
+Output:
+
+[2, 4]
+
+
+Explanation:
+
+Number 2 occurs twice
+
+Number 4 is missing
+
+Input:
+
+grid = [[9,1,7],
+        [8,9,2],
+        [3,4,6]]
+
+
+Output:
+
+[9, 5]
+
+
+Explanation:
+
+Number 9 occurs twice
+
+Number 5 is missing
+
+Constraints
+
+2 <= n <= 50
+
+Grid contains values in [1, n^2]
+
+Exactly one number is repeated, and exactly one number is missing.
+
+Approach
+
+Flatten the grid into a single list.
+
+Use a frequency map (or array) to count occurrences of each number.
+
+Traverse from 1 to n^2:
+
+If count == 2 → repeated number a.
+
+If count == 0 → missing number b.
+
+Return [a, b].
+
+This runs in O(n^2) time with O(n^2) extra space, which is efficient given the constraints.
