@@ -10,43 +10,42 @@
  */
 class Solution {
 public:
-// ListNode* reverseRecursion (ListNode* prev , ListNode* curr){
-//     if(curr==NULL){
-//         return prev;
-//     }
-//         ListNode* nextNode = curr->next;
-//         curr->next = prev;
-//         prev = curr;
-//         curr = nextNode;
 
-//          return reverseRecursion(prev, curr);
-// }
-//     ListNode* reverseList(ListNode* head) {
-//         ListNode* prev = NULL;
-//         ListNode* curr = head;
-//         ListNode* nextNode;
-//         // while(curr!=NULL){
-//         //     nextNode= curr->next;
-//         //     curr->next= prev;
-//         //     prev = curr;
-//         //     curr= nextNode;
+ListNode* usingRecursion (ListNode* prev, ListNode* curr){
+    // base case
+    if(curr ==NULL){
+        return prev;
+    }
 
-//         // }
-//         // return prev;
-//         return reverseRecursion(prev, curr);
-//     }
+    // ek case jo hum krenge
+    ListNode* newNode = curr->next;
+    curr->next= prev;
+    prev = curr; 
+    curr= newNode;
+
+    // baki recursion krega
+    ListNode* ans = usingRecursion(prev,curr);
+    return ans;
+    }
 
      ListNode* reverseList(ListNode* head) {
-        ListNode* prev= NULL;
-        ListNode* curr = head;
-        while(curr != NULL){
-            ListNode* newNode = curr->next;
-            curr->next= prev;
-            prev= curr;
-            curr= newNode;
-            head = prev;
-
-        }
-        return head;
+        ListNode* prev =NULL;
+        ListNode* curr= head;
+        return usingRecursion(prev,curr);
      }
-    };
+
+// // iterative approach to solve this ques
+//      ListNode* reverseList(ListNode* head) {
+//         ListNode* prev= NULL;
+//         ListNode* curr = head;
+//         while(curr != NULL){
+//             ListNode* newNode = curr->next;
+//             curr->next= prev;
+//             prev= curr;
+//             curr= newNode;
+//             head = prev;
+
+//         }
+//         return head;
+//      }
+  };
