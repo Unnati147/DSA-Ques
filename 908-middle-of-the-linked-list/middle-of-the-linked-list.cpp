@@ -10,15 +10,15 @@
  */
 class Solution {
 public:
-int getLength(ListNode* head){
-    int len=0;
-    ListNode* temp = head;
-    while(temp != nullptr){
-        len++;
-        temp= temp->next;
-    }
-    return len;
-}
+// int getLength(ListNode* head){
+//     int len=0;
+//     ListNode* temp = head;
+//     while(temp != nullptr){
+//         len++;
+//         temp= temp->next;
+//     }
+//     return len;
+// }
     // ListNode* middleNode(ListNode* head) {
     //     int n= getLength(head);
     //     int position = n/2 + 1;
@@ -32,30 +32,39 @@ int getLength(ListNode* head){
     //     return temp;
     // }
 
-     ListNode* middleNode(ListNode* head) {
-        int n= getLength(head);
-        int position = n/2 + 1;
-        ListNode* temp = head;
+    //  ListNode* middleNode(ListNode* head) {
+    //     int n= getLength(head);
+    //     int position = n/2 + 1;
+    //     ListNode* temp = head;
 
-        while(position  != 1){
-            position --;
-            temp = temp ->next;
+    //     while(position  != 1){
+    //         position --;
+    //         temp = temp ->next;
 
-        }
-        return temp;
-    }
-
-
-    //     ListNode* fast= head;
-    //     ListNode* slow = head;
-
-    //     while(fast!= NULL){
-    //         fast= fast->next;
-    //         if(fast!= NULL){
-    //             fast= fast->next;
-    //             slow= slow->next;
-    //         }
     //     }
-    //     return slow;
+    //     return temp;
     // }
+
+
+    // efficient siolution using tortoise algo 
+    // as the above solution needs two times traversal
+
+     ListNode* middleNode(ListNode* head) {
+
+        ListNode* fast= head;
+        ListNode* slow= head;
+
+        while(fast != NULL){
+            fast= fast->next;
+            if(fast != NULL){
+                fast= fast ->next;
+                slow= slow->next;
+            }
+           
+        }
+        return slow;
+     }
+
+
+
 };
