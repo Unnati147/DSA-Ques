@@ -19,18 +19,32 @@ int getLength(ListNode* head){
     }
     return len;
 }
-    ListNode* middleNode(ListNode* head) {
+    // ListNode* middleNode(ListNode* head) {
+    //     int n= getLength(head);
+    //     int position = n/2 + 1;
+    //     int currPos = 1;
+    //     ListNode* temp = head;
+    //     while(currPos != position){
+      
+    //         currPos++;
+    //         temp = temp->next;
+    //     }
+    //     return temp;
+    // }
+
+     ListNode* middleNode(ListNode* head) {
         int n= getLength(head);
         int position = n/2 + 1;
-        int currPos = 1;
         ListNode* temp = head;
-        while(currPos != position){
-      
-            currPos++;
-            temp = temp->next;
+
+        while(position  != 1){
+            position --;
+            temp = temp ->next;
+
         }
         return temp;
     }
+
 
     //     ListNode* fast= head;
     //     ListNode* slow = head;
