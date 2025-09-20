@@ -38,8 +38,9 @@ int getLength(ListNode* head){
         ListNode* temp = head;
 
         while(position  != 1){
-            position --;
+           
             temp = temp ->next;
+             position --;
 
         }
         return temp;
