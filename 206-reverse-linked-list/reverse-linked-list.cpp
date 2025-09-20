@@ -24,8 +24,7 @@ ListNode* usingRecursion (ListNode* prev, ListNode* curr){
     curr= newNode;
 
     // baki recursion krega
-    ListNode* ans = usingRecursion(prev,curr);
-    return ans;
+ return usingRecursion(prev,curr);
     }
 
      ListNode* reverseList(ListNode* head) {
