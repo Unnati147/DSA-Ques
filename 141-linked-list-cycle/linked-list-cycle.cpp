@@ -17,9 +17,9 @@ bool hasCycle(ListNode *head) {
         if(fast != NULL){
             fast=fast->next;
             slow= slow->next;
+        }
             if(slow == fast){
             return true;
-        }
         }
     }
     return false;
