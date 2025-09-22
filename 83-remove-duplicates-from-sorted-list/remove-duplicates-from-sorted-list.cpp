@@ -11,6 +11,14 @@
 class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head) {
+        // corner cases ko dhyan me rkhte hue 
+        if(head ==NULL){
+            return head;
+        }
+        if(head -> next == NULL){
+            return head;
+        }
+
         ListNode* temp = head;
         while(temp != NULL && temp ->next != NULL){
             if(temp ->val == temp ->next->val){
