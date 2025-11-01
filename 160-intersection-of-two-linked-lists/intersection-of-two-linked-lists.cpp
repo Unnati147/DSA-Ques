@@ -34,7 +34,7 @@ public:
             }
             while(headA && headB){
                 if(headA== headB){
-                    return headA;
+                    return headB;
                 }
                 headA= headA->next;
                 headB= headB->next;
