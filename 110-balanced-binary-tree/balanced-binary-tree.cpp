@@ -11,21 +11,38 @@
  */
 class Solution {
 public:
-    int checkHeight(TreeNode* root) {
-        if (!root) return 0;
-
-        int left = checkHeight(root->left);
-        if (left == -1) return -1;  // left subtree not balanced
-
-        int right = checkHeight(root->right);
-        if (right == -1) return -1; // right subtree not balanced
-
-        if (abs(left - right) > 1) return -1; // current node not balanced
-
-        return 1 + max(left, right);
+    int height(TreeNode* root) {
+        if(root == NULL ){
+            return 0;
+        }
+        int leftHeight = height(root->left);
+        int rightHeight = height(root->right);
+        int finalAns = max(leftHeight, rightHeight) + 1;
+        return finalAns;
     }
 
     bool isBalanced(TreeNode* root) {
-        return checkHeight(root) != -1;
+        //base case
+        if(root == NULL) {
+            return true;
+        }
+
+        //currNode - solve
+        int leftHeight = height(root->left);
+        int rightHeight = height(root->right);
+        int diff = abs(leftHeight-rightHeight);
+
+        bool currNodeAns = (diff <= 1);
+
+        bool leftAns = isBalanced(root->left);
+        bool rightAns = isBalanced(root->right);
+
+        if(currNodeAns && leftAns && rightAns) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
     }
 };
