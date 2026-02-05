@@ -14,7 +14,7 @@ public:
         // bche hue element me 0 dal denge
         while(j<nums.size()){
             nums[j] =0;
-            j++;
+            j++; 
         }
     }
 };
