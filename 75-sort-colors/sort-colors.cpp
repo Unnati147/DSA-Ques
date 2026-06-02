@@ -54,15 +54,14 @@
         }
     }
 
-    int index = 0; 
     for(int i =0; i<count0s; i++){
-        nums[index++] =0;
+       nums[i]=0;
     }
-    for(int i =0; i<count1s; i++){
-        nums[index++] =1;
+    for(int i =count0s; i<count0s+count1s; i++){
+         nums[i]=1;
     }
-    for(int i =0; i<count2s; i++){
-        nums[index++] =2;
+    for(int i =count0s+count1s; i<nums.size(); i++){
+         nums[i]=2;
     }
       }
 };
