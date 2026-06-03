@@ -11,17 +11,12 @@ public:
         //     reverse(matrix[i].begin(), matrix[i].end());
         // }
 
-        int n= matrix.size();
-        // transpose nikal lenge
-        for(int i =0;i< n ; i++){
-            for(int j= i; j<n ; j++){
-                swap(matrix[i][j], matrix[j][i]);
-            }
-             reverse(matrix[i].begin(), matrix[i].end());
+      int n = matrix.size();
+      for(int i =0 ;i<n; i++){
+        for(int j = i; j<n; j++){
+            swap (matrix[i][j], matrix[j][i]);
         }
-        // // reverse kr denge
-        // for(int i = 0 ; i< n; i++){
-            
-        // }
+        reverse(matrix[i].begin(), matrix[i].end());
+      }
     }
 };
