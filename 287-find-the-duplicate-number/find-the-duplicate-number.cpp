@@ -18,23 +18,18 @@ public:
         // }
         // return nums[0];
 
+        int n = nums.size();
+        unordered_set<int> s;
+        for(int i = 0; i < n ; i++){
+            if(s.find(nums[i]) != s.end()){
+                return nums[i];
+            }
+            else{
+                s.insert(nums[i]);
+            }
 
-
-
-
-
-
-
-
-
-
-
-
-while(nums[0] != nums[nums[0]]){
-    swap(nums[0], nums[nums[0]]);
-}
-return nums[0];
-
+        }
+        return -1;
     }
 
 };
