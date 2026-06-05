@@ -1,6 +1,18 @@
 class Solution {
 public:
     double myPow(double x, int n) {
-       return pow(x,n); 
+        if(n==0) return 1;
+        long long N =n;
+        if (N < 0) {
+            x = 1 / x;
+            N = -N;
+        }
+        
+        double tempans = myPow(x, N / 2);
+        if (N % 2 == 0) {
+            return tempans * tempans;
+        } else {
+            return tempans * tempans * x;
+        }
     }
 };
