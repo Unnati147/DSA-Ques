@@ -9,36 +9,71 @@
 class Solution {
 public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+        // ListNode* temp = headA;
+        // int a=0, b=0;
+        // while(temp){
+        //     a++;
+        //     temp = temp->next;
+        // }
+        // temp  = headB;
+        // while(temp){
+        //     b++;
+        //     temp= temp->next;
+        // }
+        // int diff= abs(a-b);
+        // if (a<b){
+        //     while(diff!=0){
+        //         headB= headB->next;
+        //         diff--;
+        //     }
+        //     }else{
+        //         while(diff){
+        //             headA= headA->next;
+        //             diff--;
+        //         }
+        //     }
+        //     while(headA && headB){
+        //         if(headA== headB){
+        //             return headB;
+        //         }
+        //         headA= headA->next;
+        //         headB= headB->next;
+        //     }
+        // return NULL;
+
+
         ListNode* temp = headA;
-        int a=0, b=0;
+        int counta=0;
+        int countb=0;
         while(temp){
-            a++;
             temp = temp->next;
+            counta++;
         }
-        temp  = headB;
+        temp = headB;
         while(temp){
-            b++;
-            temp= temp->next;
+            temp = temp->next;
+            countb++;
         }
-        int diff= abs(a-b);
-        if (a<b){
-            while(diff!=0){
-                headB= headB->next;
+        int diff = abs(counta-countb);
+        if(counta < countb){
+            while(diff){
+                headB = headB->next;
                 diff--;
             }
-            }else{
-                while(diff){
-                    headA= headA->next;
-                    diff--;
-                }
-            }
-            while(headA && headB){
-                if(headA== headB){
-                    return headB;
-                }
+        }else{
+            while(diff){
                 headA= headA->next;
-                headB= headB->next;
+                diff--;
             }
+        }
+        while(headA && headB){
+            if(headA==headB){
+                return headA;
+            }
+            headA= headA->next;
+            headB= headB->next;
+
+        }
         return NULL;
     }
 };
